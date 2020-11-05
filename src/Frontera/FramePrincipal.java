@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package Frontera;
+import Entidad.*;
 
+import java.util.ArrayList;
 /**
- *
+ *`
  * @author juand
  */
 public class FramePrincipal extends javax.swing.JFrame {
@@ -15,8 +17,12 @@ public class FramePrincipal extends javax.swing.JFrame {
     /**
      * Creates new form FramePrincipal
      */
+    //JUAN DAVID SANTAMARIA ROJAS C:\Users\juand\Documents\NetBeansProjects\LoginApplication
+    public static Sistema sistema = new Sistema();
+    
     public FramePrincipal() {
         initComponents();
+        inicializacion();
     }
 
     /**
@@ -142,6 +148,34 @@ public class FramePrincipal extends javax.swing.JFrame {
                 new FramePrincipal().setVisible(true);
             }
         });
+    }
+    public void inicializacion (){
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        
+        Usuario a = new Usuario();
+        Usuario b = new Usuario();
+        Usuario c = new Usuario();
+        
+        a.setNombre("juan");
+        a.setPassword("1234");
+        b.setNombre("pedro");
+        b.setPassword("123");
+        c.setNombre("maria");
+        c.setPassword("12345");
+        //JUAN DAVID SANTAMARIA ROJAS C:\Users\juand\Documents\NetBeansProjects\LoginApplication
+        
+        usuarios.add(a);
+        usuarios.add(b);
+        usuarios.add(c);
+        
+        sistema.setUsuarios(usuarios);
+        for (Usuario u: sistema.getUsuarios()){
+            System.out.println(u.getNombre());
+            System.out.println(u.getPassword());
+            System.out.println("----------------");
+            
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
